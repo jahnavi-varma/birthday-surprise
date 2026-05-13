@@ -39,13 +39,13 @@ const Screen5_Questions = () => {
   };
 
   return (
-    <div 
-      className="min-h-screen relative flex items-center justify-center p-4 bg-cover bg-top md:bg-center"
+    <div
+      className="min-h-screen relative flex items-center justify-center px-6 py-10 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url('/images/screen5-bg.jpg')` }}
     >
       <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
 
-      <div className="relative z-10 w-full max-w-md">
+      <div className="relative z-10 w-full max-w-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -60,7 +60,7 @@ const Screen5_Questions = () => {
                   Question {currentIndex + 1} of {questions.length}
                 </span>
               </div>
-              
+
               <h2 className="text-2xl md:text-3xl font-serif text-romantic-light mb-8 leading-snug">
                 {questions[currentIndex].text}
               </h2>
@@ -69,17 +69,15 @@ const Screen5_Questions = () => {
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Type your answer here..."
-                className="w-full h-32 bg-white/5 border border-white/20 rounded-xl p-4 text-romantic-light placeholder-white/40 focus:outline-none focus:border-romantic-pink resize-none transition-colors"
+                className="w-full h-40 bg-white/10 border border-white/20 rounded-2xl p-5 text-white placeholder-white/50 focus:outline-none focus:border-romantic-pink resize-none text-lg"
               />
-
               <button
                 onClick={handleNext}
                 disabled={!answer.trim()}
-                className={`mt-6 w-full py-3 rounded-xl tracking-wider transition-all duration-300 ${
-                  answer.trim() 
-                    ? 'bg-romantic-pink text-black hover:bg-white' 
-                    : 'bg-white/10 text-white/30 cursor-not-allowed'
-                }`}
+                className={`mt-6 w-full py-4 rounded-2xl text-lg font-semibold transition-all duration-300 ${answer.trim()
+                  ? 'bg-romantic-gold text-black hover:scale-[1.02]'
+                  : 'bg-white/10 text-white/30 cursor-not-allowed'
+                  }`}
               >
                 {currentIndex === questions.length - 1 ? 'Finish 💛' : 'Next'}
               </button>

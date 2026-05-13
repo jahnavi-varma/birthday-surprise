@@ -23,7 +23,7 @@ const Admin_Answers = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-10">
           <h1 className="text-3xl font-serif text-romantic-gold">Saved Answers</h1>
-          <button 
+          <button
             onClick={clearAnswers}
             className="px-4 py-2 bg-red-500/20 text-red-300 rounded hover:bg-red-500/40 transition-colors"
           >

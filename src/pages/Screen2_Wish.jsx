@@ -20,8 +20,8 @@ const Screen2_Wish = () => {
   }, []);
 
   return (
-    <div 
-      className="min-h-screen relative overflow-hidden bg-cover bg-top md:bg-center flex items-center justify-center p-4"
+    <div
+      className="min-h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-center px-6"
       style={{ backgroundImage: `url('/images/screen2-bg.jpg')` }}
     >
       {/* Dark overlay for readability */}
@@ -48,7 +48,7 @@ const Screen2_Wish = () => {
 
       <div className="relative z-10 w-full max-w-lg">
         <GlassCard className="bg-black/30 backdrop-blur-lg border-romantic-gold/30">
-          <motion.h1 
+          <motion.h1
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -56,15 +56,15 @@ const Screen2_Wish = () => {
           >
             Happy Birthday Nani 💛
           </motion.h1>
-          
+
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 1 }}
             onClick={() => navigate('/letter')}
-            className="mt-8 px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full text-white tracking-widest uppercase text-sm transition-all duration-300 backdrop-blur-md"
+            className="mt-8 px-10 py-3 bg-romantic-gold text-black rounded-full text-lg font-semibold shadow-xl hover:scale-105 transition-all duration-300"
           >
-            Continue
+            Continue 💛
           </motion.button>
         </GlassCard>
       </div>

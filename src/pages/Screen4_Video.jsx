@@ -16,18 +16,18 @@ const Screen4_Video = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4 relative">
-      <motion.div 
+    <div className="min-h-screen bg-[#0f0f0f] flex flex-col items-center justify-center px-4 py-8 relative">
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
         className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl border border-white/10"
       >
-        <video 
+        <video
           ref={videoRef}
           controls
           playsInline
-          className="w-full h-auto aspect-video bg-black object-cover"
+          className="w-full max-h-[85vh] object-contain bg-black"
           onEnded={() => {
             // Optional auto-navigate when video ends
             // navigate('/questions');
@@ -38,7 +38,7 @@ const Screen4_Video = () => {
         </video>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 3, duration: 1 }}

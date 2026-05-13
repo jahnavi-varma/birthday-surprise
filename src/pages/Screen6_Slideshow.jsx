@@ -28,24 +28,24 @@ const Screen6_Slideshow = () => {
   };
 
   return (
-    <div 
+    <div
       className="min-h-screen relative flex flex-col items-center justify-center p-4 bg-cover bg-top md:bg-center overflow-hidden"
       style={{ backgroundImage: `url('/images/screen6-bg.jpg')` }}
     >
       {/* Reduced overlay opacity so the background photo shows clearly */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]"></div>
 
       {/* Romantic Audio Track */}
-      <audio 
+      <audio
         ref={audioRef}
-        src="https://www.bensound.com/bensound-music/bensound-love.mp3" 
-        autoPlay 
-        loop 
+        src="https://www.bensound.com/bensound-music/bensound-love.mp3"
+        autoPlay
+        loop
       />
 
       {/* Controls */}
       <div className="absolute top-6 right-6 z-20">
-        <button 
+        <button
           onClick={togglePlay}
           className="flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full border border-white/40 transition-all text-white"
         >
@@ -62,7 +62,7 @@ const Screen6_Slideshow = () => {
             exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
             transition={{ duration: 2, ease: "easeInOut" }}
           >
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white text-glow leading-relaxed">
+            <h1 className="text-4xl md:text-6xl font-bold font-serif text-white drop-shadow-2xl leading-relaxed text-center">
               {finalMessages[index]}
             </h1>
           </motion.div>
