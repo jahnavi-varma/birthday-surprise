@@ -1,0 +1,9 @@
+PLACE YOUR IMAGES HERE.
+
+To use custom backgrounds, simply copy your images into this folder and name them EXACTLY as follows:
+- screen2-bg.jpg (Used for Screen 2: Wish Screen)
+- screen3-bg.jpg (Used for Screen 3: Letter Screen)
+- screen5-bg.jpg (Used for Screen 5: Questions Screen)
+- screen6-bg.jpg (Used for Screen 6: Final Slideshow Screen)
+
+Make sure they are JPG files (or update the extensions in the React code if you use PNG).

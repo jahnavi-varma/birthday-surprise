@@ -1,0 +1,6 @@
+PLACE YOUR VIDEO HERE.
+
+To use your custom video, simply copy your video file into this folder and name it EXACTLY as follows:
+- memory-video.mp4 (Used for Screen 4: Video Screen)
+
+Make sure it is an MP4 file.
