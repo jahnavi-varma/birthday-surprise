@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import GlassCard from '../components/GlassCard';
 import { questions } from '../data/questions';
+import { db } from "../firebase";
+import { ref, push } from "firebase/database";
 
 const Screen5_Questions = () => {
   const navigate = useNavigate();
@@ -18,17 +20,31 @@ const Screen5_Questions = () => {
     }
   }, []);
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (!answer.trim()) return;
 
     const currentQuestion = questions[currentIndex];
-    const newAnswers = [
-      ...savedAnswers,
-      { questionId: currentQuestion.id, question: currentQuestion.text, answer, date: new Date().toISOString() }
-    ];
+
+    const answerData = {
+      questionId: currentQuestion.id,
+      question: currentQuestion.text,
+      answer,
+      date: new Date().toISOString(),
+    };
+
+    // Save locally
+    const newAnswers = [...savedAnswers, answerData];
 
     setSavedAnswers(newAnswers);
-    localStorage.setItem('birthday-answers', JSON.stringify(newAnswers));
+
+    localStorage.setItem(
+      'birthday-answers',
+      JSON.stringify(newAnswers)
+    );
+
+    // Save to Firebase
+    await push(ref(db, "answers"), answerData);
+
     setAnswer('');
 
     if (currentIndex < questions.length - 1) {
